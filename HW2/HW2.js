@@ -80,8 +80,9 @@ if (side1 > 0 && side2 > 0 && side3 > 0) {
         
         const triangleArea = Math.sqrt(perimeter * ((perimeter - side1) * (perimeter - side2) * (perimeter - side3)));
         console.log(`The area of the triangle is: ${triangleArea.toFixed(3)}`);
-
-        if ((side1 ** side1) + (side2 ** side2) == (side3 ** side3)) {
+        //check if triangle is right-angled (Pythagoras' theorem) 
+        //Valid test inputs: 3,4,5; 5,12,13; Invalid test inputs: 5,6,8; 5,9,10. 
+        if ((side1 * side1) + (side2 * side2) == (side3 * side3)) {
             console.log('This is a right-angled triangle.');
         } else {
             console.log('This is not a right-angled triangle.')
