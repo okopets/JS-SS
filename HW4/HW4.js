@@ -10,6 +10,7 @@ Caught: Test
     > testThrow(new Error('An error happened'));
 Caught: Error: An error happened
 */
+
 console.log('--- Task 1 ---')
 
 function testThrow(exception){
@@ -28,6 +29,7 @@ testThrow(5);
 якщо функції передано не числові параметри. Напишіть код, який використовує цю функцію 
 та обробляє можливі виняткові ситуації.
 */
+
 console.log('--- Task 2 ---');
 
 function calcRectangleArea(width, height) {
@@ -60,7 +62,7 @@ console.log('--- Task 3 ---');
 function checkAge() {
     let age = prompt("Please enter your age.");
    
-    if (age == "") {
+    if (age.trim() == "") {
         throw new Error ("The field is empty! Please enter your age.");
     } else if (isNaN(age)) {
         throw new Error ("Please enter a number.");
