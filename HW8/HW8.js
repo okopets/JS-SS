@@ -97,7 +97,7 @@ Email is not correct!
 */
 console.log('--This is Task 6--'); 
 function checkEmail(str) {
-    let regExp = /^[a-zA-Z0-9]+[-_]{0,1}\w+@[a-zA-Z]+\.[a-zA-Z]+$/;
+    let regExp = /^[a-zA-Z0-9]\w+-{0,1}\w+@[a-zA-Z]+\.[a-zA-Z]+$/;
     let result = regExp.test(str);
     if (result) {
         console.log('Email is correct!');
