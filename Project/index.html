@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List App</title>
+    <link href="styles.css" rel="stylesheet" charset="utf-8">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="header-title">TO-DO LIST APP</h1>
+        <h3>You can do more than you think</h3>
+    </div>
+    <div class="grid-container">
+        <div class="grid-child1">
+            <div class="all-todo-lists">
+                <h2 class="todo-list-title">My Todo Lists</h2>
+                <form id="new-todo-list">
+                    <input type="text" class="input" placeholder="New todo list" name="todoListText">
+                    <button id="add-todo-list" class="btn">Add List</button>
+                </form>
+                <ul class="todo-lists"></ul>
+            </div>
+        </div>
+        <div class="grid-child2">
+            <div class="todo-list">
+                <div class="todo-header">
+                    <h2 class="todo-list-header">Select Todo List</h2>
+                </div>
+                <div class="filters">
+                        <input id="search-todo" class="input" type="text" placeholder="Search todos">
+                    <div id="todos-left" class="todos-left-message"></div>
+                    <label class="checkbox highlighted-text">
+                        <input id="hide-done" type="checkbox">Hide done
+                    </label>
+                </div>
+                <div class="todo-body">
+                    <form id="todo-text">
+                        <input type="text" class="input" placeholder="Enter your todo here" name="todoText">
+                        <button id="add-todo" class="btn">Add Todo</button>
+                    </form>
+                    <div id="todos"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="todo-list-app.js"></script>
+</body>
+</html>
