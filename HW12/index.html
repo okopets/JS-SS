@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div>
+        <h2>Practical task 12 - AJAX</h2>
+        <p>Task 1</p>
+        <button id="btn-vote" type="button">Vote!</button>
+        <br>
+        <p>Task 2</p>
+        <button id="btn-books" type="button">Download books</button>
+        <ul id="authors"></ul>
+    </div>
+
+    <script>
+        document.getElementById("btn-vote").addEventListener("click", function(e) {
+            const xhttp = new XMLHttpRequest()
+            xhttp.onload = function () {
+                if (xhttp.status == 200) {
+                    e.target.textContent = xhttp.responseText
+                } else {
+                    alert(`Error${xhttp.status}: ${xhttp.statusText}`)
+                }
+            }
+            xhttp.open("GET", "http://localhost:5000/", true);
+            xhttp.send();
+        })
+
+        document.getElementById("btn-books").addEventListener("click", function (e) {
+            const xhttp = new XMLHttpRequest()
+            xhttp.onload = function () {
+                if (xhttp.status == 200) {
+                    const books = JSON.parse(xhttp.responseText)
+                    const authors = document.getElementById("authors");
+                    authors.innerText = "";
+                    books.forEach(function(book) {
+                        const li = document.createElement("li");
+                        li.textContent = book.author;
+                        authors.appendChild(li);
+                    })
+                } else {
+                    alert(`Error${xhttp.status}: ${xhttp.statusText}`)
+                }
+            }
+            xhttp.open("GET", "http://localhost:5000/books.json", true);
+            xhttp.send();
+        })
+    </script>
+
+</body>
+
+</html>
